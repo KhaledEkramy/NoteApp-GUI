@@ -5,17 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d5b6c9c-9b79-4a63-aeeb-93054281da55" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notes/Khaled/Note/.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notes/Khaled/Note/Khaled's Note.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notes/Khaled/Note/My name.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notes/Khaled/Note/dfsdf.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notes/Khaled/Note/null.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notes/Khaled/activeNote.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Notes/Khaled/activeNote.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotesKhaled/images/logo 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/main/Controll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/main/Controll.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/main/Edit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/main/Edit.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +69,7 @@
       <workItem from="1703089518725" duration="6418000" />
       <workItem from="1703160109590" duration="295000" />
       <workItem from="1703160679994" duration="8367000" />
-      <workItem from="1703174717961" duration="2285000" />
+      <workItem from="1703174717961" duration="3508000" />
     </task>
     <servers />
   </component>
