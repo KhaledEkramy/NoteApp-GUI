@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.main.Controll">
+   <children>
+      <Button layoutX="233.0" layoutY="142.0" mnemonicParsing="false" onAction="#buttonCreateNote" text="Create Note">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="245.0" layoutY="246.0" mnemonicParsing="false" onAction="#buttonEditNote" text="Edit Note">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER" layoutX="158.0" layoutY="44.0" prefHeight="36.0" prefWidth="272.0" text="Manage  Notes">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Button layoutX="96.0" layoutY="318.0" mnemonicParsing="false" onAction="#buttouBackLogin" text="back">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="exitButton" layoutX="540.0" layoutY="14.0" onAction="#exitButton" prefHeight="28.0" prefWidth="46.0" text="Exit" />
+   </children>
+</AnchorPane>

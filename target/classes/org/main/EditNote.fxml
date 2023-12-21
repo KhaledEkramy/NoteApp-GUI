@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="475.0" prefWidth="586.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.main.Edit">
+   <children>
+
+      <TextArea fx:id="textArea" layoutX="80.0" layoutY="93.0" prefHeight="292.0" prefWidth="425.0" scrollTop="5.0" AnchorPane.bottomAnchor="92.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="79.0" AnchorPane.topAnchor="93.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </TextArea>
+      <Button fx:id="saveButton" layoutX="245.0" layoutY="404.0" mnemonicParsing="false" onAction="#buttonSaveEditNote" prefHeight="44.0" prefWidth="95.0" text="Save" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="245.0" AnchorPane.rightAnchor="244.0" AnchorPane.topAnchor="404.0">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Button>
+      <Label fx:id="titleLabel" alignment="CENTER" layoutX="170.0" layoutY="31.0" prefHeight="36.0" prefWidth="250.0" text="Edit Note">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Button layoutX="14.0" layoutY="411.0" mnemonicParsing="false" onAction="#buttonBackManage" text="back" />
+      <Button fx:id="btnInsertImage" layoutX="80.0" layoutY="67.0" onAction="#chooseAndInsertImage" text="Insert Image" />
+      <Button fx:id="exitButton" layoutX="531.0" layoutY="14.0" onAction="#exitButton" prefHeight="25.0" prefWidth="41.0" text="Exit" />
+
+      <ParallelCamera />
+      <PerspectiveCamera />
+      <AmbientLight color="CHARTREUSE" lightOn="true" />
+      <PointLight color="CHARTREUSE" lightOn="true" />
+      <PerspectiveCamera />
+      <ParallelCamera />
+      <AmbientLight color="CHARTREUSE" lightOn="true" />
+
+   </children>
+   <effect>
+      <Blend />
+   </effect>
+</AnchorPane>

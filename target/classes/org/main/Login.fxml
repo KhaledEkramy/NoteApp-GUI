@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="418.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.main.Controll">
+   <children>
+      <TextField fx:id="textUser" layoutX="166.0" layoutY="138.0" />
+      <PasswordField fx:id="textPassword" layoutX="166.0" layoutY="233.0" />
+
+      <Button fx:id="login" layoutX="175.0" layoutY="308.0" mnemonicParsing="false" onAction="#buttonLogin" text="Login">
+         <font>
+         <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="CreateUser" layoutX="130.0" layoutY="395.0" mnemonicParsing="false" onAction="#buttonCreatAccount" text="Create  account">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+
+      <Label layoutX="54.0" layoutY="133.0" text="User Name">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="54.0" layoutY="232.0" text="Password">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="120.0" layoutY="358.0" text="If you don't have account create one." />
+      <Label alignment="CENTER" layoutX="41.0" layoutY="36.0" prefHeight="51.0" prefWidth="336.0" text="Welcome to your Note-App" textAlignment="CENTER" textFill="#4c0de0" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font size="21.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Label>
+      <Label fx:id="myLabel" layoutX="120.0" layoutY="650" prefHeight="30.0" prefWidth="300.0" text="Enter Email And Password">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="exitButton" layoutX="363.0" layoutY="14.0" onAction="#exitButton" prefHeight="25.0" prefWidth="41.0" text="Exit" />
+
+
+   </children>
+</AnchorPane>

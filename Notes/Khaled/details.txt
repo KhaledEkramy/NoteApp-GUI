@@ -1,0 +1,2 @@
+Name = Khaled
+Password = 12345678
