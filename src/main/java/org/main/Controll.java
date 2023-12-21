@@ -19,6 +19,7 @@ import org.models.FileManage;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.*;
 
 import java.io.File;
@@ -55,7 +56,7 @@ public class Controll {
     @FXML
     private Button btnInsertImage;
 
-    private FileChooser fileChooser;
+    private FileChooser fileChooser = new FileChooser();
     private Stage stage;
 
 
@@ -124,7 +125,7 @@ public class Controll {
     }
 
     @FXML
-    private void chooseAndInsertImage(ActionEvent event) {
+    private void chooseAndInsertImage(ActionEvent event) throws FileNotFoundException {
         // Create the file chooser dialog
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select an Image");
@@ -135,8 +136,25 @@ public class Controll {
         // Show the file chooser dialog
         File file = fileChooser.showOpenDialog(stage);
         if (file != null) {
-            // Insert the image into the text area
-            textArea.insertText(textArea.getCaretPosition(), file.toURI().toString());
+            try {
+                // Create the output directory
+                String noteFolderName = manage.getActiveNote();
+                File outputDir = new File("Notes\\" + manage.getActiveUser() + "\\images\\" + noteFolderName);
+                String extension = file.getName().substring(file.getName().lastIndexOf(".") + 1);
+                outputDir.mkdirs();
+
+                // Copy the image to the output directory
+                File outputFile = new File(outputDir, file.getName());
+                BufferedImage image = ImageIO.read(file);
+                ImageIO.write(image, extension, outputFile);
+
+                // Insert the image path into the text area
+                String insertedText = "\nImage Link: Notes\\" + manage.getActiveUser() + "\\images\\" + noteFolderName + "\\" + file.getName() + "\n";
+                textArea.insertText(textArea.getCaretPosition(), insertedText);
+                image.flush();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
     public void openImage(String path){
