@@ -1,7 +1,5 @@
 package org.main;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,20 +14,11 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import org.models.FileManage;
+import org.models.FileManager;
 
-import java.awt.*;
 import java.io.*;
 import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
 import java.util.ResourceBundle;
-
-import javax.imageio.ImageIO;
-import javax.swing.*;
-import java.awt.image.BufferedImage;
 
 
 import javafx.stage.FileChooser;
@@ -57,7 +46,7 @@ public class Edit implements Initializable {
     private Scene scene;
 
     private String currentNote;
-    private FileManage manage= new FileManage();
+    private FileManager manage= new FileManager();
 
 
     // Add File Chooser Initialization in initialize method
@@ -75,12 +64,6 @@ public class Edit implements Initializable {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            // Set the content of the note in the text area when initializing
-//            try {
-//
-//            } catch (IOException e) {
-//                System.out.println(e);
-//            }
         });
 
 
@@ -111,37 +94,20 @@ public class Edit implements Initializable {
     
      // Add this method for choosing and inserting an image in EditNote.fxml
      @FXML
-     private void chooseAndInsertImage(ActionEvent event) throws FileNotFoundException {
-         // Create the file chooser dialog
+     private void chooseAndInsertImage(ActionEvent event) {
          FileChooser fileChooser = new FileChooser();
          fileChooser.setTitle("Select an Image");
          fileChooser.getExtensionFilters().addAll(
                  new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif")
          );
 
-         // Show the file chooser dialog
          File file = fileChooser.showOpenDialog(stage);
          if (file != null) {
-             try {
-                 // Create the output directory
-                 String noteFolderName = manage.getActiveNote();
-                 File outputDir = new File("Notes\\" + manage.getActiveUser() + "\\images\\" + noteFolderName);
-                 String extension = file.getName().substring(file.getName().lastIndexOf(".") + 1);
-                 outputDir.mkdirs();
-
-                 // Copy the image to the output directory
-                 File outputFile = new File(outputDir, file.getName());
-                 BufferedImage image = ImageIO.read(file);
-                 ImageIO.write(image, extension, outputFile);
-
-                 // Insert the image path into the text area
-                 String insertedText = "\nImage Link: Notes\\" + manage.getActiveUser() + "\\images\\" + noteFolderName + "\\" + file.getName() + "\n";
-                 textArea.insertText(textArea.getCaretPosition(), insertedText);
-                 image.flush();
-             } catch (IOException e) {
-                 e.printStackTrace();
-             }
+             manage.chooseAndInsertImage(file);
          }
+         // Insert the image path into the text area
+         String insertedText = "\nImage Link: Notes\\" + manage.getActiveUser() + "\\images\\" + manage.getActiveNote() + "\\" + file.getName() + "\n";
+         textArea.insertText(textArea.getCaretPosition(), insertedText);
      }
 
 

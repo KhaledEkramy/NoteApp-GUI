@@ -1,19 +1,13 @@
 package org.models;
 
-import org.main.Controll;
-
 import javax.imageio.ImageIO;
-import javax.swing.*;
-import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.*;
-import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Scanner ;
 
 
-public class FileManage  {
+public class FileManager {
 
     private User user= new User();
     private Note note=new Note(user);
@@ -61,7 +55,7 @@ public class FileManage  {
             System.out.println(e);
         }
     }
-    public String searchUser(String nameFolder) throws IOException {
+    public static String searchUser(String nameFolder) throws IOException {
         File path = new File("Notes");
         String[] childern = path.list();
         if (childern == null) {
@@ -221,7 +215,25 @@ public class FileManage  {
         return content;
     }
 
+    public void chooseAndInsertImage(File file) {
+        try {
+            String noteFolderName = getActiveNote();
+            File outputDir = new File("Notes\\" + getActiveUser() + "\\images\\" + noteFolderName);
+            outputDir.mkdirs();
+            String extension = file.getName().substring(file.getName().lastIndexOf(".") + 1);
+            outputDir.mkdirs();
 
+            File outputFile = new File(outputDir, file.getName());
+            Image image = new Image(file);
+            image.setNote(getNote());
+            image.setUser(getUser());
+            // Save the image to the output directory
+            ImageIO.write(image.getImage(), extension, outputFile);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 

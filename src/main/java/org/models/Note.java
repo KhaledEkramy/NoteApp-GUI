@@ -32,17 +32,8 @@ public class Note {
         this.body = body;
     }
 
-    // Method to insert an image into the note
-    public void insertImage(String imageName) {
-        try {
-            // Append a link to the image in the note
-            File noteFile = new File(path, getTitle() + ".txt");
-            FileWriter writer = new FileWriter(noteFile, true);
-            writer.write("\nImage Link: Notes\\" + user.getName() + "\\images\\" + imageName + "\n");
-            writer.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public User getUser() {
+        return this.user ;
     }
 
     @Override
