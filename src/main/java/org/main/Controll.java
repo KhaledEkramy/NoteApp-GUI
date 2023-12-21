@@ -6,8 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
@@ -28,7 +26,6 @@ public class Controll {
     private final String LOGIN = "Login.fxml";
     private final String NOTE = "Note.fxml";
     private final String MANAGE="ManageNote.fxml";
-//    private final String SECRETNote = "SecretNote.fxml";
     private FileManager manage = new FileManager();
 
     //user
@@ -48,10 +45,6 @@ public class Controll {
     private TextField textUser;
     @FXML
     private TextField textPassword;
-    @FXML
-    private Label myLabel;
-    @FXML
-    private Button btnInsertImage;
 
     private FileChooser fileChooser = new FileChooser();
     private Stage stage;
@@ -136,35 +129,6 @@ public class Controll {
         // Insert the image path into the text area
         String insertedText = "\nImage Link: Notes\\" + manage.getActiveUser() + "\\images\\" + manage.getActiveNote() + "\\" + file.getName() + "\n";
         textArea.insertText(textArea.getCaretPosition(), insertedText);
-    }
-    public void openImage(String path){
-        JFrame frame = new JFrame();
-        JPanel panel = new JPanel();
-        JLabel label = new JLabel();
-
-        // Set the path of the image
-        String imagePath = "path/to/image.jpg";
-
-        try {
-            // Read the image from the file
-            Image image = ImageIO.read(new File(imagePath));
-
-            // Set the image to the label
-            label.setIcon(new ImageIcon(image));
-
-            // Add the label to the panel
-            panel.add(label);
-
-            // Add the panel to the frame
-            frame.add(panel);
-
-            // Set the frame properties
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.pack();
-            frame.setVisible(true);
-        } catch (IOException e) {
-            System.out.println("Error: " + e.getMessage());
-        }
     }
 
 }

@@ -5,10 +5,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -34,14 +32,7 @@ public class Edit implements Initializable {
     private TextField textTittle= new TextField();
     @FXML
     private TextArea textArea= new TextArea();
-
     @FXML
-    private Button bEdit= new Button();
-
-    @FXML
-    private Label titleLabel;
-
-    private Parent root;
     private Stage stage;
     private Scene scene;
 
